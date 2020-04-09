@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Bayyenat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BayyenatDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Splash.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemTray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingsDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Settings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bayyenat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BayyenatDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Splash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemTray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingsDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\about.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Bayyenat.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\minimize.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Mohammad_256color.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\start.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\start_large.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\stop.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\tray.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\icon3.ico" />
+    <None Include="res\Bayyenat48.ico" />
+    <None Include="res\Bayyenat.ico" />
+    <None Include="res\Bayyenat72.bmp" />
+    <None Include="Colors.inf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6454c849-bbfe-4970-b182-2a984ba9f777}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{94fddf9d-585c-44f9-8a1f-ba5cfc94d61f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{5b511797-7fdf-4f05-b616-25f229c1deea}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Bayyenat.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bitmap2.bmp" />
+    <Image Include="res\bitmap3.bmp" />
+    <Image Include="res\change.bmp" />
+    <Image Include="res\close.bmp" />
+    <Image Include="res\Close.ico" />
+    <Image Include="res\Hadith-To-Wallpaper.ico" />
+    <Image Include="res\icon1.ico" />
+    <Image Include="res\Salavat.bmp" />
+    <Image Include="res\Shiny-WP.bmp" />
+    <Image Include="res\start.bmp" />
+    <Image Include="res\stop.bmp" />
+  </ItemGroup>
+</Project>
