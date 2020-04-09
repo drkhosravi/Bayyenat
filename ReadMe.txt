@@ -1,99 +1,34 @@
-================================================================================
-    MICROSOFT FOUNDATION CLASS LIBRARY : Hadith-To-Wallpaper Project Overview
-===============================================================================
+إن‎‏َّ هذِِهِ القُلوبَ تَمَلُّ‏‏‎ُّ کما تَمَلُّ الأبدانُ فَابتَغوا لَها طَرائِفَ الحِکمِ.
+دلها مانند بدنها خسته می‌شوند پس (برای رفع خستگی آنها) حکمتهای تازه بجویید. (نهج البلاغه، حکمت ۹۱)
 
-The application wizard has created this Hadith-To-Wallpaper application for
-you.  This application not only demonstrates the basics of using the Microsoft
-Foundation Classes but is also a starting point for writing your application.
+نرم افزار بیـّـنات « تولید کاغذدیواری حدیث دار »
+هر مسلمانی دوست دارد با معارف پیامبر اسلام صلی الله علیه و آله و اهل بیت (علیهم السلام) آشنا شود. اما زندگی ماشینی امروزی اجازه مطالعه کتابهای دینی را به هر کسی نمی دهد. ضمن اینکه خیلی از ما دنبال مطالب کوتاه و مفید هستیم. استفاده از کاغذدیواریهای زیبا (wallpaper یا والپیپر) که به حدیثی از اهل بیت (سلام الله علیهم) مزین شده باشد، ایده‌ی جذابی است که به ما امکان آشنایی با معارف اهل بیت را می‌دهد. نرم افزار بیـّــنات که به همین مناسبت تولید شده است، تلاشی است برای گسترش فرهنگ اهل بیت در سرتاسر گیتی.
 
-This file contains a summary of what you will find in each of the files that
-make up your Hadith-To-Wallpaper application.
+این نرم افزار، با گرفتن دو مسیر شامل تصاویر پس زمینه و فایل احادیث، آنها را با یکدیگر ترکیب کرده و یک پس زمینه حدیثی زیبا تولید می کند. تصویر حدیثی زمینه، می تواند به صورت متناوب و در بازه های زمانی که کاربر تعریف می کند، تغییر کند. در نسخه ی جدید، علاوه بر تصویر، امکان استفاده از رنگهای ثابت یا محوشونده به عنوان پس زمینه وجود دارد.
 
-Hadith-To-Wallpaper.vcxproj
-    This is the main project file for VC++ projects generated using an application wizard.
-    It contains information about the version of Visual C++ that generated the file, and
-    information about the platforms, configurations, and project features selected with the
-    application wizard.
+در نسخه جاری (نسخه ۵)، ۱۰ مجموعه حدیث، شامل احادیث منتخب با حدود ۷۰۰ حدیث و آیه‌ی غیر تکراری، احادیث کتاب نهج الفصاحه شامل حدود ۳۲۰۰ حدیث، حدیث گرانسنگ معراج در ۶۴ بخش و خطبه حضرت زهرا در ۱۵ بخش با ترجمه فارسی قرار گرفته است. این نسخه (۴٫۵) از ۵ زبان عربی، فارسی، انگلیسی، اسپانیای و پرتغالی پشتیبانی می کند. جا دارد از زحمات و پیگیریهای یکی از روحانیون عزیز که فایل ترجمه اسپانیایی و پرتغالی را تهیه کردند تشکر کنم. فایل احادیث این زبانها تعداد حدیثهای کمی دارد اما بستر نرم افزاری کاملا آماده شده و کار اصلی از این پس تهیه و ترجمه  احادیث است (فایل احادیث انگلیسی، احادیث اسپانیایی، احادیث پرتغالی).
 
-Hadith-To-Wallpaper.vcxproj.filters
-    This is the filters file for VC++ projects generated using an Application Wizard. 
-    It contains information about the association between the files in your project 
-    and the filters. This association is used in the IDE to show grouping of files with
-    similar extensions under a specific node (for e.g. ".cpp" files are associated with the
-    "Source Files" filter).
+لطفا نظرات و پیشنهادات خودتان را در بخش نظرات همین پست و یا از طریق ایمیل hossein60@chmail.ir برای ما بفرستید.
 
-Hadith-To-Wallpaper.h
-    This is the main header file for the application.  It includes other
-    project specific headers (including Resource.h) and declares the
-    CHadithApp application class.
+دانلود نرم افزار چند زبانه بیـّـنات (والپیپر مذهبی حدیث دار) نگارش ۵ نسخه ۶۴بیتی با حجم ۶۰ مگابایت (شامل ۵۰ تصویر)
 
-Hadith-To-Wallpaper.cpp
-    This is the main application source file that contains the application
-    class CHadithApp.
+دانلود بینات از گیت هاب
 
-Hadith-To-Wallpaper.rc
-    This is a listing of all of the Microsoft Windows resources that the
-    program uses.  It includes the icons, bitmaps, and cursors that are stored
-    in the RES subdirectory.  This file can be directly edited in Microsoft
-    Visual C++. Your project resources are in 1033.
+دانلود کدهای بینات از گیت هاب
+قابل نصب روی ویندوزهای، Seven، Windows 8 و Windows 10
 
-res\Hadith-To-Wallpaper.ico
-    This is an icon file, which is used as the application's icon.  This
-    icon is included by the main resource file Hadith-To-Wallpaper.rc.
+تبلیغ و انتشار بینات
 
-res\HadithToWallpaper.rc2
-    This file contains resources that are not edited by Microsoft
-    Visual C++. You should place all resources not editable by
-    the resource editor in this file.
+به منظور تبلیغ و انتشار بینات، دوستان علاقه مند می توانند از کد زیر استفاده کنند:
+
+<a href=”http://andishehonline.ir/bayyenat-islamic-quotes/” title=”بیـّـنات – کاغذ دیواری حدیثی”><img src=”http://andishehonline.ir/img/Bayyenat.jpg” border=”0″ width=”128px” height=”94px”/></a>
+
+خروجی این کد، تصویر دارای لینک زیر است:
 
 
-/////////////////////////////////////////////////////////////////////////////
 
-The application wizard creates one dialog class:
+تصاویری از نرم افزار و خروجیهایش
+بینات - نرم افزار تولید کاغذ دیواری حدیثی (والپیپر مذهبی) - Bayyenat islamic quote generatorوالپیپر مذهبی - کاغذ دیواری حدیثیوالپیپر مذهبی - کاغذ دیواری حدیثی- Bayyenat - Wallpaper - Quote Bayyenat Wallpaper - والپیپر مذهبی - کاغذ دیواری حدیثیوالپیپر مذهبی - کاغذ دیواری حدیثی- Bayyenat - Wallpaper - Quoteبچه ها مشغول بازی
 
-Hadith-To-WallpaperDlg.h, Hadith-To-WallpaperDlg.cpp - the dialog
-    These files contain your CHadithDlg class.  This class defines
-    the behavior of your application's main dialog.  The dialog's template is
-    in Hadith-To-Wallpaper.rc, which can be edited in Microsoft Visual C++.
-
-/////////////////////////////////////////////////////////////////////////////
-
-Other Features:
-
-ActiveX Controls
-    The application includes support to use ActiveX controls.
-
-/////////////////////////////////////////////////////////////////////////////
-
-Other standard files:
-
-StdAfx.h, StdAfx.cpp
-    These files are used to build a precompiled header (PCH) file
-    named Hadith-To-Wallpaper.pch and a precompiled types file named StdAfx.obj.
-
-Resource.h
-    This is the standard header file, which defines new resource IDs.
-    Microsoft Visual C++ reads and updates this file.
-
-Hadith-To-Wallpaper.manifest
-	Application manifest files are used by Windows XP to describe an applications
-	dependency on specific versions of Side-by-Side assemblies. The loader uses this
-	information to load the appropriate assembly from the assembly cache or private
-	from the application. The Application manifest  maybe included for redistribution
-	as an external .manifest file that is installed in the same folder as the application
-	executable or it may be included in the executable in the form of a resource.
-/////////////////////////////////////////////////////////////////////////////
-
-Other notes:
-
-The application wizard uses "TODO:" to indicate parts of the source code you
-should add to or customize.
-
-If your application uses MFC in a shared DLL, you will need
-to redistribute the MFC DLLs. If your application is in a language
-other than the operating system's locale, you will also have to
-redistribute the corresponding localized resources mfc110XXX.DLL.
-For more information on both of these topics, please see the section on
-redistributing Visual C++ applications in MSDN documentation.
-
-/////////////////////////////////////////////////////////////////////////////
+داستان این نرم افزار
+چند سال قبل، روی کامپیوتر یکی از دانشجویانم، تصویر زمینه ای دیدم که دارای حدیث بود و هر چند دقیقه تعویض می شد. نرم افزارش را گرفتم دیدم یک انسان زحمت کش نشسته و با فتوشاپ بیش از ۶۰۰ حدیث را روی تصاویر زیبا نوشته و در قالب یک نرم افزار سنگین (حدود ۵۰۰ مگابایت) آماده استفاده کرده است. از همان موقع ضمن اینکه از این نرم افزار (که اسمی هم ظاهرا نداشت) استفاده می کنم، در ذهنم بود که برنامه ای بنویسم که یک مسیر برای تصویر دریافت کند و یک مسیر هم فایل احادیث و خود برنامه اینها را با هم ترکیب کند. امسال (۹۱) پس از ماجرای توهین به پیامبر اعظم (صلی الله علیه و آله) تصمیم گرفتم این ایده را عملی کنم و حاصلش شد «بیـّـنات»
