@@ -23,7 +23,7 @@ using namespace Gdiplus;
 
 #define SLIDE_SHOW_INTERVAL_DEF			L"050000"
 #define FONT_HADITH_DEF					L"Neirizi"
-#define FONT_TRANS_DEF					L"IRANSans"
+#define FONT_TRANS_DEF					L"IRANSansXFaNum"
 #define OPACITY_DEF						40
 #define FULL_WIDTH_GRAD_DEF				0
 #define SOLID_COLORS_DEF				0
