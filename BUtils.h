@@ -5,9 +5,9 @@ typedef cv::Scalar_<float> ScalarF;
 
 using namespace Gdiplus;
 
-inline Color CLR2Color(COLORREF clr)
+inline Color CLR2Color(COLORREF clr, BYTE alfa=0)
 {
-	return Color(GetRValue(clr), GetGValue(clr), GetBValue(clr));
+	return Color(alfa, GetRValue(clr), GetGValue(clr), GetBValue(clr));
 }
 cv::Mat CreateGradient(int H, int W, ScalarF c1, ScalarF c2);
 

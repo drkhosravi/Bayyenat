@@ -10,6 +10,8 @@
 #include "SystemTray.h"
 #include "afxwin.h"
 #include <opencv.hpp>
+#include <gdipluscolor.h>
+#include <mutex>
 
 // CBayyenatDlg dialog
 class CBayyenatDlg : public CDialogEx
@@ -35,7 +37,7 @@ protected:
 
 	BOOL ActivateToolTips();
 
-	void LoadParams();
+	void UpdateUI();
 
 	void UpdateFontList();
 
@@ -67,14 +69,24 @@ public:
 	CMFCColorButton m_clrHadith;
 	CMFCColorButton m_clrTrans;
 	CMFCColorButton m_clrShadow;
+	Gdiplus::StringFormat *fmt_rtl;
+	int header_idx = 0;//index of the narration that will appear in header
+	std::mutex mu;
+	bool hadith_file_changed = true;
+	bool slide_show_started = false;//slide show started
 
 	CBitmap bmpStart, bmpStop, bmpMain, bmpClose, bmpChange;
 
 	void ApplySettings();
 	void GenerateHadithWp(std::wstring img_path);
+	void DrawTextWithEffects(Gdiplus::Graphics& graphics, const WCHAR* text, Gdiplus::FontFamily& fontFamily, Gdiplus::RectF& rc, bool doShadow, bool doGlow);
+	
+	void DrawHadith(std::wstring& hadith, Gdiplus::RectF& rc, int imH, cv::Mat& mat, Gdiplus::RectF& box, Gdiplus::Graphics* graphics, Gdiplus::Font& font_fa);
+	void DrawTrans(std::wstring& translation, Gdiplus::RectF& rc, int imH, cv::Mat& mat, Gdiplus::RectF& box, Gdiplus::Graphics* graphics, Gdiplus::Font& font_fa);
+	//void DrawTrans2(std::wstring& translation, Gdiplus::RectF& rc, int imH, cv::Mat& mat, Gdiplus::RectF& box, Gdiplus::Graphics* graphics, Gdiplus::Font& font_fa);
 
-	Gdiplus::RectF BoundRect(Gdiplus::RectF rc, Gdiplus::Graphics* graphics, Gdiplus::StringFormat& fmt_rtl, int imH, int imW);
-	static void FillBackground(Gdiplus::Graphics* graphics, Gdiplus::RectF& box, cv::Mat& im, CImage& _img);
+	Gdiplus::RectF BoundRect(Gdiplus::RectF rc, Gdiplus::Graphics* graphics, int imH, int imW);
+	void FillBackground(Gdiplus::Graphics* graphics, Gdiplus::RectF& box, cv::Mat& im, CImage& _img);
 
 	void SetNextWallpaper();
 	void DrawHeaderandFooter();
@@ -113,10 +125,10 @@ public:
 	afx_msg void OnEnChangeHadithFile();
 	virtual void OnCancel();
 	virtual BOOL PreTranslateMessage(MSG* pMsg);
-	afx_msg void OnBnClickedChkRandomHadith();
+	//afx_msg void OnBnClickedChkRandomHadith();
 	afx_msg void OnBnClickedSaveWp();
-	afx_msg void OnBnClickedChkFixedHadith();
-	afx_msg void OnBnClickedChkFixedImg();
+	//afx_msg void OnBnClickedChkFixedHadith();
+	//afx_msg void OnBnClickedChkFixedImg();
 	afx_msg void OnBnClickedBtnSettings();
 	afx_msg void OnBnClickedBtnApplyStyle();
 	afx_msg void OnHotKey(UINT nHotKeyId, UINT nKey1, UINT nKey2);
@@ -129,4 +141,20 @@ public:
 	afx_msg void OnBnClickedCopyImage();
 	CComboBox m_cmb_hadith_files;
 	afx_msg void OnCbnSelchangeCmbHadithFiles();
+	// Opacity slider
+	CSliderCtrl m_slider;
+	afx_msg void OnBnClickedChkEnableGlowTrans();
+	afx_msg void OnBnClickedChkEnableGlow();
+	CMFCColorButton m_clrGlowTrans;
+	CMFCColorButton m_clrGlow;
+	CButton chk_trans_shadow_auto_color;
+	CButton chk_auto_color;
+	CButton chk_glow_auto_color;
+	CButton chk_shadow_auto_color;
+	CButton chk_trans_enable_glow;
+	CButton chk_trans_enable_shadow;
+	CButton chk_enable_shadow;
+	CButton chk_enable_glow;
+	CButton chk_trans_auto_color;
+	CButton chk_trans_glow_auto_color;
 };

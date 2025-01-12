@@ -38,8 +38,6 @@ CBayyenatApp::CBayyenatApp()
 // The one and only CBayyenatApp object
 HANDLE hMutexOneInstance;
 CBayyenatApp theApp;
-wchar_t		str_local_pathW[MAX_PATH] = {0};//the path in which wallpaper will be saved (Unicode)
-char		str_local_pathA[MAX_PATH] = { 0 };//the path in which wallpaper will be saved (ascii)
 
 void CBayyenatApp::SetLanguage(ELang lang)
 {
@@ -87,7 +85,7 @@ void CBayyenatApp::SetLanguage(ELang lang)
 #endif
 	}
 
-	if (active_lang == langFA || active_lang == langAR)
+	if (config.active_lang == langFA || config.active_lang == langAR)
 		rtl_flags = MB_RTLREADING | MB_RIGHT;
 	else
 		rtl_flags = 0;
@@ -164,14 +162,14 @@ BOOL CBayyenatApp::InitInstance()
 
 	/////////////////////////
 	ReadSettings();
-	SetLanguage(active_lang);
+	SetLanguage(config.active_lang);
 	/////////////////////////
 
 	wchar_t* cmd = GetCommandLine();
 	wchar_t* arg = wcsrchr(cmd, L' ');
-	if(wcsstr(arg, L"tray") && (on_logon == 2)/*don't start*/)
+	if(wcsstr(arg, L"tray") && (config.on_logon == 2)/*don't start*/)
 		exit(0);
-	if(wcsstr(arg, L"tray") && (on_logon != 1)/*just change wp, so don't show splash*/)
+	if(wcsstr(arg, L"tray") && (config.on_logon != 1)/*just change wp, so don't show splash*/)
 	{
 		splash.Create(AfxGetMainWnd());
 		splash.ShowWindow(SW_SHOW);
@@ -202,7 +200,7 @@ BOOL CBayyenatApp::InitInstance()
 		CString str;
 		str.LoadString(IDS_CHANGE_HADITH_FILE);
 		MessageBox(NULL, str, L":::", MB_ICONINFORMATION);
-		SetLanguage(active_lang);
+		SetLanguage(config.active_lang);
 	}*/
 	// Delete the shell manager created above.
 	/*if (pShellManager != NULL)
