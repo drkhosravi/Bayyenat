@@ -5,7 +5,7 @@ typedef cv::Scalar_<float> ScalarF;
 
 using namespace Gdiplus;
 
-inline Color CLR2Color(COLORREF clr, BYTE alfa=0)
+inline Color CLR2Color(COLORREF clr, BYTE alfa=255) //255 means no transparency
 {
 	return Color(alfa, GetRValue(clr), GetGValue(clr), GetBValue(clr));
 }

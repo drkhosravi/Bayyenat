@@ -43,4 +43,5 @@ public:
 	afx_msg void OnBnClickedChkRandomImage();
 	afx_msg void OnBnClickedChkFixedHadith();
 	afx_msg void OnBnClickedChkFixedImg();
+	CSliderCtrl glow_slider;
 };

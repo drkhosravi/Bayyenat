@@ -121,4 +121,7 @@
     <Image Include="res\start.bmp" />
     <Image Include="res\stop.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="TODO.txt" />
+  </ItemGroup>
 </Project>

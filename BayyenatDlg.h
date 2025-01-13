@@ -79,13 +79,14 @@ public:
 
 	void ApplySettings();
 	void GenerateHadithWp(std::wstring img_path);
-	void DrawTextWithEffects(Gdiplus::Graphics& graphics, const WCHAR* text, Gdiplus::FontFamily& fontFamily, Gdiplus::RectF& rc, bool doShadow, bool doGlow);
+	void DrawTextWithEffects(Gdiplus::Graphics& graphics, const WCHAR* text, Gdiplus::FontFamily& fontFamily, float font_sz, int font_style, 
+		Gdiplus::RectF& rc, bool doShadow, bool doGlow, Gdiplus::SolidBrush& textBrush, Gdiplus::SolidBrush& shadowBrush, Gdiplus::Pen& glowPen);
 	
 	void DrawHadith(std::wstring& hadith, Gdiplus::RectF& rc, int imH, cv::Mat& mat, Gdiplus::RectF& box, Gdiplus::Graphics* graphics, Gdiplus::Font& font_fa);
 	void DrawTrans(std::wstring& translation, Gdiplus::RectF& rc, int imH, cv::Mat& mat, Gdiplus::RectF& box, Gdiplus::Graphics* graphics, Gdiplus::Font& font_fa);
 	//void DrawTrans2(std::wstring& translation, Gdiplus::RectF& rc, int imH, cv::Mat& mat, Gdiplus::RectF& box, Gdiplus::Graphics* graphics, Gdiplus::Font& font_fa);
 
-	Gdiplus::RectF BoundRect(Gdiplus::RectF rc, Gdiplus::Graphics* graphics, int imH, int imW);
+	Gdiplus::RectF ComputeBBox(Gdiplus::RectF rc, Gdiplus::Graphics* graphics, int imH, int imW);
 	void FillBackground(Gdiplus::Graphics* graphics, Gdiplus::RectF& box, cv::Mat& im, CImage& _img);
 
 	void SetNextWallpaper();

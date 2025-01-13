@@ -82,6 +82,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\$(Configuration)64\</OutDir>
+    <IncludePath>D:\LIB\opencv-4.9.0\build\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\LIB\opencv-4.9.0\build\x64\vc16\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -91,6 +93,8 @@
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>true</GenerateManifest>
     <OutDir>$(SolutionDir)\$(Configuration)64\</OutDir>
+    <IncludePath>D:\LIB\opencv-4.9.0\build\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\LIB\opencv-4.9.0\build\x64\vc16\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -266,6 +270,9 @@
     <Image Include="res\Shiny-WP.bmp" />
     <Image Include="res\start.bmp" />
     <Image Include="res\stop.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="TODO.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

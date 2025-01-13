@@ -23,7 +23,7 @@ using namespace Gdiplus;
 
 #define SLIDE_SHOW_INTERVAL_DEF			60//minutes
 #define FONT_HADITH_DEF					L"Neirizi"
-#define FONT_TRANS_DEF					L"IRANSans"
+#define FONT_TRANS_DEF					L"IRANSansXFaNum"
 #define OPACITY_DEF						40
 #define FULL_WIDTH_GRAD_DEF				0
 #define SOLID_COLORS_DEF				0
@@ -54,16 +54,20 @@ struct Settings
 	bool fixed_hadith = FIXED_HADITH_DEF;
 	bool random_wp = RANDOMW_WP_DEF;
 
-	int right_margin = RIGHT_MARGIN_DEF;
-	int left_margin = LEFT_MARGIN_DEF; //in %
-	int top_margin = TOP_MARGIN_DEF;
+	short right_margin = RIGHT_MARGIN_DEF;
+	short left_margin = LEFT_MARGIN_DEF; //in %
+	short top_margin = TOP_MARGIN_DEF;
+	short shadow_off_x = 5;
+	short shadow_off_y = 5;
+	short glow_size = 10;
 
 	int on_logon = 0; // what to do on windows logon(0 start, 1 change aand close, 2 don't start)
 
 	char hotkey_VK = 'W';
 	UINT hotkey_modifier = 0;//index of selected key in combo box
 	bool hotkey_enable = true;
-	int slide_show_interval = SLIDE_SHOW_INTERVAL_DEF;
+	short slide_show_interval = SLIDE_SHOW_INTERVAL_DEF;
+
 
 	bool hadith_auto_color = false;	
 	bool hadith_shadow_auto_color = false;
@@ -76,8 +80,8 @@ struct Settings
 
 	bool full_width_grad = false;
 	bool solid_colors = false;
-	int  font_style_hadith = FontStyleBold;
-	int  font_style_trans = FontStyleBold;
+	short  font_style_hadith = FontStyleRegular;
+	short  font_style_trans = FontStyleRegular;
 	bool hadith_auto_size = false;
 	bool trans_auto_size = false;
 
@@ -102,8 +106,8 @@ struct Settings
 
 	COLORREF clr_gradient = 0xffffffff;
 
-	int opacity = 20;//0 - 255
-	int grad_color_idx = -1;
+	short opacity = 20;//0 - 255
+	short grad_color_idx = -1;
 	int last_hadith = -1; //last shown hadith (used when showing Hadithes sequentially, specially when restarting windows it should continue from last hadith)
 
 	wchar_t str_hadith_path[MAX_PATH]; //مسیر فایل احادیث
