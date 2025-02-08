@@ -196,6 +196,10 @@
       <Culture Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">0x000a</Culture>
     </ResourceCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\64.bmp" />
+    <Image Include="res\Bayyenat72.bmp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

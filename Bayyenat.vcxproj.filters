@@ -120,6 +120,10 @@
     <Image Include="res\Shiny-WP.bmp" />
     <Image Include="res\start.bmp" />
     <Image Include="res\stop.bmp" />
+    <Image Include="res\64.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\64.bmp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="TODO.txt" />

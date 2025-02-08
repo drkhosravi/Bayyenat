@@ -259,6 +259,8 @@
     <None Include="res\tray.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="res\64.bmp" />
+    <Image Include="res\64.png" />
     <Image Include="res\bitmap2.bmp" />
     <Image Include="res\bitmap3.bmp" />
     <Image Include="res\change.bmp" />
