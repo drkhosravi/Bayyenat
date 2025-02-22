@@ -50,10 +50,6 @@ void CBayyenatApp::SetLanguage(ELang lang)
 	{
 		hDll = LoadLibrary(L"BayyenatEN.dll");
 	}
-	else if (lang == langES)
-	{
-		hDll = LoadLibrary(L"BayyenatSPA.dll");
-	}
 	else if (lang == langPO)
 	{
 		hDll = LoadLibrary(L"BayyenatPOR.dll");

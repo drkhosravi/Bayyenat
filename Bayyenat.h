@@ -14,7 +14,7 @@
 // CBayyenatApp:
 // See Hadith-To-Wallpaper.cpp for the implementation of this class
 //
-enum ELang {langEN, langES, langPO, langFA, langAR};
+enum ELang {langEN, langPO, langFA, langAR};
 
 class CBayyenatApp : public CWinAppEx
 {
