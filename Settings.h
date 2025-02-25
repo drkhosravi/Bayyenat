@@ -11,9 +11,9 @@ using namespace Gdiplus;
 #ifndef _BAYYENAT_SETTINGS_H_
 #define _BAYYENAT_SETTINGS_H_
 
-#define LEFT_MARGIN_DEF					50
+#define LEFT_MARGIN_DEF					20
 #define TOP_MARGIN_DEF					20
-#define RIGHT_MARGIN_DEF				5
+#define RIGHT_MARGIN_DEF				20
 #define RANDOM_HADITH_DEF				1
 #define FIXED_IMAGE_DEF					0
 #define FIXED_HADITH_DEF				0
@@ -27,18 +27,22 @@ using namespace Gdiplus;
 #define OPACITY_DEF						40
 #define FULL_WIDTH_GRAD_DEF				0
 #define SOLID_COLORS_DEF				0
-#define FONT_SIZE_HADITH_DEF			18
-#define FONT_SIZE_TRANS_DEF				22
-#define HADITH_COLOR_DEF				0xFFFFFF
-#define TRANS_COLOR_DEF					0x55FFFF
-#define HADITH_ENABLE_SHADOW_DEF		1
-#define HADITH_SHADOW_COLOR_DEF			0x800080
+#define FONT_SIZE_HADITH_DEF			30
+#define FONT_SIZE_TRANS_DEF				40
+#define HADITH_COLOR_DEF				0x000000
+#define TRANS_COLOR_DEF					0x00007F //Red
+#define HADITH_ENABLE_SHADOW_DEF		0
+#define HADITH_SHADOW_COLOR_DEF			0x90C090
+#define HADITH_ENABLE_GLOW_DEF			1
+#define HADITH_GLOW_COLOR_DEF			0x80FFFF
 #define TRANS_ENABLE_SHADOW_DEF			1
-#define TRANS_SHADOW_COLOR_DEF			0x000080
+#define TRANS_SHADOW_COLOR_DEF			0xA0A0A0
+#define TRANS_ENABLE_GLOW_DEF			0
+#define TRANS_GLOW_COLOR_DEF			0x80FFFF
 #define GRADIENT_COLOR_DEF				0x000000
 #define STYLE_HADITH_DEF				FontStyleRegular
-#define STYLE_TRANS_DEF					FontStyleRegular
-#define	GRADIENT_DEF					gtBlur
+#define STYLE_TRANS_DEF					FontStyleBold
+#define	GRADIENT_DEF					gtNone
 
 enum		Gradient_Type		  {gtFixedColor, gtFixedColorAuto, gtBlur, gtVertical1 , gtVertical2, gtHorizon1, gtHorizon2, gtPath1, gtPath2, gtBellShape1, gtBellShape2, gtEllipse, gtNone, gtCount};
 
@@ -201,13 +205,16 @@ static void ReadSettings()
 
 static void SaveSettings()
 {
-	FILE* fp = fopen("config.dat", "wb");
+	FILE* fp = fopen("config.dat", "r+b");
+	if (!fp)
+		fp = fopen("config.dat", "wb");
 	if (!fp)
 	{
-		MessageBoxA(NULL, "File <config.dat> cannot be created.", 0, 0);
+		MessageBoxA(NULL, "File <config.dat> cannot be read/created.", 0, 0);
 	}
 	else
 	{
+		fseek(fp, 0, SEEK_SET);
 		fwrite(&config, sizeof(Settings), 1, fp);
 		fclose(fp);
 	}
