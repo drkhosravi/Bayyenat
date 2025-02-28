@@ -149,15 +149,16 @@ BOOL CBayyenatApp::InitInstance()
 	
 	WideCharToMultiByte(CP_ACP, 0, str_local_pathW, -1, str_local_pathA, wcslen(str_local_pathW), NULL, NULL);
 
-	wchar_t full_path[MAX_PATH] = {0};
+	sprintf(str_config_path, "%s\\%s", str_local_pathA, "BayyenatWP.dat");
+
+	/*wchar_t full_path[MAX_PATH] = {0};
 	wsprintf(full_path, L"%s\\%s", str_local_pathW, L"BayyenatWP.ini");
-	/*GetFullPathName(_T(), MAX_PATH, full_path, 0);*/
 	free((void*)m_pszProfileName);
-	m_pszProfileName = ::_tcsdup(full_path);
+	m_pszProfileName = ::_tcsdup(full_path);*/
 	//InitTooltipManager ();//it seems not to work in dialogs
 
 	/////////////////////////
-	ReadSettings();
+	bool read_success = ReadSettings();
 	SetLanguage(config.active_lang);
 	/////////////////////////
 
@@ -172,7 +173,7 @@ BOOL CBayyenatApp::InitInstance()
 	}
 
 	dlg_inited = false;
-	CBayyenatDlg dlg;
+	CBayyenatDlg dlg(0, !read_success);
 	m_pMainWnd = &dlg;
 	//dlg.ModifyStyleEx(WS_EX_LAYOUTRTL, 0);
 	INT_PTR nResponse = dlg.DoModal();

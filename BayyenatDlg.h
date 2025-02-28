@@ -18,7 +18,7 @@ class CBayyenatDlg : public CDialogEx
 {
 // Construction
 public:
-	CBayyenatDlg(CWnd* pParent = NULL);	// standard constructor
+	CBayyenatDlg(CWnd* pParent = NULL, bool load_default_settings = false);	// standard constructor
 
 // Dialog Data
 	enum { IDD = IDD_BAYYENAT_DIALOG };
@@ -74,7 +74,7 @@ public:
 	std::mutex mu;
 	bool hadith_file_changed = true;
 	bool slide_show_started = false;//slide show started
-
+	bool load_default_settings = false;
 	CBitmap bmpStart, bmpStop, bmpMain, bmpClose, bmpChange;
 
 	void ApplySettings();

@@ -6,6 +6,7 @@
 #include "BUtils.h"
 #include "Bayyenat.h"
 
+
 using namespace Gdiplus;
 
 #ifndef _BAYYENAT_SETTINGS_H_
@@ -14,6 +15,8 @@ using namespace Gdiplus;
 #define LEFT_MARGIN_DEF					20
 #define TOP_MARGIN_DEF					20
 #define RIGHT_MARGIN_DEF				20
+#define GLOW_SIZE						7
+#define SHADOW_OFF						3
 #define RANDOM_HADITH_DEF				1
 #define FIXED_IMAGE_DEF					0
 #define FIXED_HADITH_DEF				0
@@ -31,13 +34,13 @@ using namespace Gdiplus;
 #define FONT_SIZE_TRANS_DEF				40
 #define HADITH_COLOR_DEF				0x000000
 #define TRANS_COLOR_DEF					0x00007F //Red
-#define HADITH_ENABLE_SHADOW_DEF		0
+#define HADITH_ENABLE_SHADOW_DEF		1
 #define HADITH_SHADOW_COLOR_DEF			0x90C090
-#define HADITH_ENABLE_GLOW_DEF			1
+#define HADITH_ENABLE_GLOW_DEF			0
 #define HADITH_GLOW_COLOR_DEF			0x80FFFF
-#define TRANS_ENABLE_SHADOW_DEF			1
+#define TRANS_ENABLE_SHADOW_DEF			0
 #define TRANS_SHADOW_COLOR_DEF			0xA0A0A0
-#define TRANS_ENABLE_GLOW_DEF			0
+#define TRANS_ENABLE_GLOW_DEF			1
 #define TRANS_GLOW_COLOR_DEF			0x80FFFF
 #define GRADIENT_COLOR_DEF				0x000000
 #define STYLE_HADITH_DEF				FontStyleRegular
@@ -63,7 +66,7 @@ struct Settings
 	short top_margin = TOP_MARGIN_DEF;
 	short shadow_off_x = 5;
 	short shadow_off_y = 5;
-	short glow_size = 10;
+	short glow_size = 7;
 
 	int on_logon = 0; // what to do on windows logon(0 start, 1 change aand close, 2 don't start)
 
@@ -131,6 +134,7 @@ extern UINT		HOTKEY_MODIFIERS[4];// = { MOD_ALT, MOD_CONTROL, MOD_SHIFT, MOD_WIN
 extern wchar_t	ExePath[MAX_PATH];
 extern wchar_t	str_local_pathW[MAX_PATH];//the path in which wallpaper will be saved (unicode)
 extern char		str_local_pathA[MAX_PATH];//the path in which wallpaper will be saved (ascii)
+extern char		str_config_path[MAX_PATH];
 extern CString	lang_names[];
 extern std::wstring lang_code[];
 extern std::wstring lang_prefix[];
@@ -177,12 +181,14 @@ static void ReadColors()
 	}
 }
 //Load settings from registery
-static void ReadSettings()
+static bool ReadSettings()
 {
-	FILE* fp = fopen("config.dat", "rb");
+	bool result = true;
+	FILE* fp = fopen(str_config_path, "rb");
 	if (!fp)
 	{
-		MessageBoxA(NULL, "File <config.dat> not found. all configs will be set to DEFAULTS.", 0, 0);
+		MessageBoxA(NULL, "File <BayyenatWP.dat> not found. all configs will be set to DEFAULTS.", 0, 0);
+		result = false;
 	}
 	else
 	{
@@ -201,16 +207,18 @@ static void ReadSettings()
 	
 	if (GradColors.size()/2 <= (size_t)config.grad_color_idx)
 		config.grad_color_idx = 0;
+
+	return result;
 }
 
 static void SaveSettings()
 {
-	FILE* fp = fopen("config.dat", "r+b");
+	FILE* fp = fopen(str_config_path, "r+b");
 	if (!fp)
-		fp = fopen("config.dat", "wb");
+		fp = fopen(str_config_path, "wb");
 	if (!fp)
 	{
-		MessageBoxA(NULL, "File <config.dat> cannot be read/created.", 0, 0);
+		MessageBoxA(NULL, "File <BayyenatWP.dat> cannot be read/created.", 0, 0);
 	}
 	else
 	{
